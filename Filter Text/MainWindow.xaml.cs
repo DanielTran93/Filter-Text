@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Filter_Text
 {
@@ -27,11 +28,11 @@ namespace Filter_Text
 
         private void addAccount_Click(object sender, RoutedEventArgs e)
         {
-
             List<string> accounts = new List<string>();
-            string[] toSplit = input.Text.Split('-');
-            string[] account = toSplit[1].Split('.');
+            string[] toSplit = input.Text.Split(new[] {splitOneText.Text}, StringSplitOptions.None);
+            string[] account = toSplit[1].Split(new[] {splitTwoText.Text}, StringSplitOptions.None);
             accounts.Add(account[0]);
+
             foreach (var i in accounts)
             {
                 accountsList.Items.Add(i);
@@ -63,7 +64,16 @@ namespace Filter_Text
             if (result == System.Windows.Forms.DialogResult.OK)
             {
                 saveLocation.Text = dialog.SelectedPath;
+
+                using (StreamWriter outputStream = new StreamWriter(saveLocation.Text + "\\"+ "Output.csv"))
+                    foreach (var item in accountsList.Items)
+                    {
+                        outputStream.WriteLine(item);
+                    }
             }
+
+
+            
         }
     }
 }
