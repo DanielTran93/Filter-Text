@@ -7,15 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Margin="10,0,0,0">
-        <TextBox x:Name="input" HorizontalAlignment="Left" Height="47" Margin="10,118,0,0" TextWrapping="Wrap" Text="Put text here" VerticalAlignment="Top" Width="599"/>
-        <Button x:Name="addAccount" Content="Add Accounts" HorizontalAlignment="Left" Margin="422,355,0,0" VerticalAlignment="Top" Width="125" Click="addAccount_Click"/>
-        <ListBox x:Name="accountsList" HorizontalAlignment="Left" Height="399" Margin="604,10,0,0" VerticalAlignment="Top" Width="168"/>
-        <Button x:Name="browseFolder" Content="Email Location" HorizontalAlignment="Left" Margin="0,340,0,0" VerticalAlignment="Top" Width="156" Click="browseFolder_Click"/>
-        <TextBlock x:Name="pathLocation" HorizontalAlignment="Left" Margin="161,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Height="20" Background="#FFD4D4D4"/>
-        <Button x:Name="saveFolder" Content="Save to Location" HorizontalAlignment="Left" Margin="0,370,0,0" VerticalAlignment="Top" Width="156" Click="saveFolder_Click"/>
-        <TextBlock x:Name="saveLocation" HorizontalAlignment="Left" Margin="161,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="236" Background="#FFD4D4D4"/>
-        <TextBox x:Name="splitOneText" HorizontalAlignment="Left" Height="23" Margin="10,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="splitTwoText" HorizontalAlignment="Left" Height="23" Margin="202,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="input" HorizontalAlignment="Left" Height="47" Margin="0,10,0,0" TextWrapping="Wrap" Text="Put text here" VerticalAlignment="Top" Width="591"/>
+        <Button x:Name="addAccount" Content="Add Accounts" HorizontalAlignment="Left" Margin="413,363,0,0" VerticalAlignment="Top" Width="178" Click="addAccount_Click" Height="50"/>
+        <ListBox x:Name="listedItems" HorizontalAlignment="Left" Height="399" Margin="604,10,0,0" VerticalAlignment="Top" Width="168"/>
+        <Button x:Name="browseFolder" Content="Email Location" HorizontalAlignment="Left" Margin="0,363,0,0" VerticalAlignment="Top" Width="156" Click="browseFolder_Click"/>
+        <TextBlock x:Name="pathLocation" HorizontalAlignment="Left" Margin="161,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" Height="20" Background="#FFD4D4D4"/>
+        <Button x:Name="saveFolder" Content="Save to Location" HorizontalAlignment="Left" Margin="0,389,0,0" VerticalAlignment="Top" Width="156" Click="saveFolder_Click"/>
+        <TextBlock x:Name="saveLocation" HorizontalAlignment="Left" Margin="161,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="247" Background="#FFD4D4D4"/>
+        <TextBox x:Name="splitOneText" HorizontalAlignment="Left" Height="147" Margin="0,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="293"/>
+        <TextBox x:Name="splitTwoText" HorizontalAlignment="Left" Height="147" Margin="298,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="293"/>
+        <TextBlock HorizontalAlignment="Left" Margin="145,84,0,0" TextWrapping="Wrap" Text="How to use: &#10;If we had a sentence &quot;I am Dan and here i am&quot; &#10;and wanted the word &quot;Dan&quot; &#10;We will put &quot;I am &quot; in the left box &#10;and &quot;and here i am&quot; in the right box" VerticalAlignment="Top" Width="314" Height="97" FontSize="14"/>
 
     </Grid>
 </Window>

@@ -26,6 +26,7 @@ namespace Filter_Text
             InitializeComponent();
         }
 
+        //button to add to the list
         private void addAccount_Click(object sender, RoutedEventArgs e)
         {
             List<string> accounts = new List<string>();
@@ -35,19 +36,23 @@ namespace Filter_Text
 
             foreach (var i in accounts)
             {
-                accountsList.Items.Add(i);
+                listedItems.Items.Add(i);
             }
 
         }
 
+        //button to browse to your folder location containing files which you want to obtain the text from
         private void browseFolder_Click(object sender, RoutedEventArgs e)
         {
+            //sets dialog to the dialog browser and checks for the dialog result
             var dialog = new System.Windows.Forms.FolderBrowserDialog();
             System.Windows.Forms.DialogResult result = dialog.ShowDialog();
-            string[] files;
+            
             if (result == System.Windows.Forms.DialogResult.OK)
             {
                 pathLocation.Text = dialog.SelectedPath;
+                
+                
             }
 
             //files = System.IO.Directory.GetFiles(dialog.SelectedPath);
@@ -56,17 +61,20 @@ namespace Filter_Text
            
         }
 
+        //The save to location button
         private void saveFolder_Click(object sender, RoutedEventArgs e)
         {
+            //sets dialog to the dialog browser and checks for the dialog result
             var dialog = new System.Windows.Forms.FolderBrowserDialog();
             System.Windows.Forms.DialogResult result = dialog.ShowDialog();
 
+            //when user selects their path and clicks OK, it saves an Output.csv to the location with each item in the accountsList box
             if (result == System.Windows.Forms.DialogResult.OK)
             {
                 saveLocation.Text = dialog.SelectedPath;
 
                 using (StreamWriter outputStream = new StreamWriter(saveLocation.Text + "\\"+ "Output.csv"))
-                    foreach (var item in accountsList.Items)
+                    foreach (var item in listedItems.Items)
                     {
                         outputStream.WriteLine(item);
                     }
